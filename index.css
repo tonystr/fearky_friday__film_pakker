@@ -4,11 +4,77 @@ body, html {
     padding: 0;
     background-color: #15151a;
     color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    padding: .4rem 2rem;
+    border-bottom: 3px solid #121115;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 8;
+    background-color: #15151a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav {
+    padding-right: 4rem;
+    padding-top: 18px;
+    font-size: 1.2rem;
+}
+
+header nav a {
+    margin-left: 1rem;
+    color: #ffffff;
+}
+
+header .brand {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+header .brand span {
+    padding-top: 18px;
+    margin-left: 12px;
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+    transition: .14s color;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    left: 50%;
+    right: 50%;
+    background-color: #fde771;
+    transition: .14s all;
+}
+
+a:hover {
+    color: #fde771;
+    cursor: pointer;
+}
+
+a:hover::after {
+    left: 0;
+    right: 0;
 }
 
 .packs {
     display: flex;
     flex-direction: column;
+    margin-top: calc(3rem + 34px);
 }
 
 .pack {
