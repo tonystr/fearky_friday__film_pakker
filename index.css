@@ -48,6 +48,7 @@ a {
     text-decoration: none;
     position: relative;
     transition: .14s color;
+    color: #ff8383;
 }
 
 a::after {
@@ -71,129 +72,26 @@ a:hover::after {
     right: 0;
 }
 
-.packs {
-    display: flex;
-    flex-direction: column;
-    margin-top: calc(3rem + 34px);
-}
-
-.pack {
-    margin: 1rem auto;
-    max-width: 1200px;
-    transition: transform .2s;
-}
-
-.pack > a {
-    color: #ffffff;
-}
-
-.pack:hover {
-    cursor: pointer;
-}
-
-.pack:hover > a {
-    color: #fde771;
-}
-
-.pack:hover h1 {
-    color: #fde771 !important;
-}
-
-.pack:hover .movies {
-    box-shadow: inset 0 0 32px #000000,
-                0 0 0px 4px #fde771;
-}
-
-.pack:hover .movies img {
-    box-shadow: 0 0 20px rgba(0, 0, 12, .8);
-}
-
-.pack h1 {
-    font-size: 2rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    transition: color .14s;
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
-
-.pack .head {
+footer {
+    border-top: 3px solid #121115;
+    margin-top: 4rem;
+    padding: 1rem 2rem;
+    text-align: center;
+    color: #7d7e93;
     display: flex;
     justify-content: space-between;
-    margin: .4rem 1rem;
 }
 
-.pack .price .new {
-    color: #e5ecf7;
-    font-size: 1.8rem;
-    background-color: #323140;
-    border-radius: .4rem;
-    padding: 0 6px;
-}
-
-.pack .price .old {
-    color: #7d7e93;
-    font-weight: 200;
-    text-decoration: line-through;
-    font-size: 1.4rem;
-    margin-right: 8px;
-}
-
-.pack .movies {
-    position: relative;
+footer .details {
     display: flex;
-    padding: 16px 60px;
-    background-color: #0a0a0a;
-    box-shadow: inset 0 0 0px #000000,
-                0 1px 7px rgba(0, 0, 0, .4);
-    transition: border-color .14s, .14s box-shadow;
+    justify-content: space-between;
 }
 
-.pack .movies img {
-    height: 300px;
-    margin: 8px;
-    border-radius: 3px;
-    box-shadow: 0 1px 13px rgba(0, 0, 32, .5);
-    transition: .14s box-shadow;
+footer .details > *,
+footer > * {
+    margin: 0 1rem;
 }
 
-.pack .sale {
-    background-color: #00af50;
-    padding: 2px 6px;
-    border-radius: 8px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-left: 12px;
-    color: #ffffff;
-}
-
-#pack_action .movies {
-    background-image: url('images/theme_backgrounds/action.jpg');
-    background-size: cover;
-    background-position: center;
-    border-color: #bf3a3a;
-}
-#pack_action h1 {
-    color: #fd7171;
-}
-
-#pack_masterpieces .movies {
-    background-image: url('images/theme_backgrounds/masterpiece.jpg');
-    background-position: center;
-    background-size: cover;
-    border-color: #3f3fdf;
-}
-#pack_masterpieces h1 {
-    color: #8ba7f9;
-}
-
-#pack_anime .movies {
-    background-image: url('images/theme_backgrounds/anime.jpg');
-    background-size: cover;
-    background-position: center;
-    border-color: #8be3be;
-}
-#pack_anime h1 {
-    color: #8be3be;
+details summary:hover {
+    cursor: pointer;
 }
