@@ -4,15 +4,109 @@
         <meta charset="utf-8">
         <title>Film utlån BETAL</title>
         <link href="./index.css" rel="stylesheet">
+        <link href="./packs.css" rel="stylesheet">
+        <link href="./pay.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
     </head>
     <body>
-        BETAL HER
+        <header>
+            <a href="/">
+                <div class="brand">
+                        <img src="images/film.png" alt="" width="50">
+                        <span>Film Dealeren<span>
+                </div>
+            </a>
+            <nav>
+                <a href="/pay.html?pack=action">Action</a>
+                <a href="/pay.html?pack=masterpieces">Mesterverk</a>
+                <a href="/pay.html?pack=anime">Anime</a>
+            </nav>
+        </header>
+        <main>
+            BETAL HER
+            <div display="none" class="pack" id="pack_action">
+                <a href="/pay.html?pack=action">
+                    <div class="head">
+                        <h1>Action klassikere <span class="sale">-40%</span></h1>
+                        <div class="price">
+                            <span class="old">580kr</span>
+                            <span class="new">349kr</span>
+                        </div>
+                    </div>
+                    <div class="movies">
+                        <img src="images/posters/300.jpg" alt="300">
+                        <img src="images/posters/blade_runner.jpg" alt="Blade Runner">
+                        <img src="images/posters/django.jpg" alt="Django">
+                        <img src="images/posters/inception.jpg" alt="Inception">
+                        <img src="images/posters/scarface.jpg" alt="Scarface">
+                    </div>
+                </a>
+            </div>
+            <div class="pack" id="pack_masterpieces">
+                <a href="/pay.html?pack=masterpieces">
+                    <div class="head">
+                        <h1>Mesterverk <span class="sale">-33%</span></h1>
+                        <div class="price">
+                            <span class="old">446kr</span>
+                            <span class="new">299kr</span>
+                        </div>
+                    </div>
+                    <div class="movies">
+                        <img src="images/posters/clockwork.jpg" alt="A Clockwork Orange">
+                        <img src="images/posters/full_metal_jacket.jpg" alt="Full Metal Jacket">
+                        <img src="images/posters/parasite.jpg" alt="Parasite">
+                        <img src="images/posters/shining.jpg" alt="The Shining">
+                        <img src="images/posters/space_oddysey.jpg" alt="2001: A Space Oddysey">
+                    </div>
+                </a>
+            </div>
+            <div class="pack" id="pack_anime">
+                <a href="/pay.html?pack=anime">
+                    <div class="head">
+                        <h1>Kinesiske Tegneserier <span class="sale">-69%</span></h1>
+                        <div class="price">
+                            <span class="old">1355kr</span>
+                            <span class="new">420kr</span>
+                        </div>
+                    </div>
+                    <div class="movies">
+                        <img src="images/posters/akira.jpg" alt="Akira">
+                        <img src="images/posters/death_note.jpg" alt="Death note">
+                        <img src="images/posters/kill_la_kill.jpg" alt="Kill la Kill">
+                        <img src="images/posters/re_zero.jpg" alt="Re:Zero">
+                        <img src="images/posters/konosuba.jpg" alt="Konosuba">
+                    </div>
+                </a>
+            </div>
+        </main>
         <footer>
-            <details>
-                <summary>Attributions</summary>
-                All backgrounds are in public domain, acquired from <a href="https://www.publicdomainpictures.net/" target="_blank">https://www.publicdomainpictures.net/</a>. All movie posters are aquired from IMDB and myanimelist.net.
-            </details>
+            <div>
+                © Copyright Film Dealeren 2020
+            </div>
+            <div class="details">
+                <details>
+                    <summary>Kilder</summary>
+                    Alle bakgrunner er i åpent domene, anskaffet fra <a href="https://www.publicdomainpictures.net/" target="_blank">https://www.publicdomainpictures.net/</a>. <br>
+                    Alle film bilder er fra <a href="https://www.imdb.com/" target="_blank">IMDB</a> og <a href="https://myanimelist.net/" target="_blank">myanimelist.net</a>.
+                </details>
+                <details>
+                    <summary>Kontakt oss</summary>
+                    Telefon: 38 92 64 48 <br>
+                    Email: film@dealeren.com
+                </details>
+            </div>
+            <div>
+                Nettside utviklet av <a href="https://tonystr.net" target="_blank">Tony Strømsnæs</a>.
+            </div>
         </footer>
+        <script>
+            try {
+                const pack = window.location.href.match(/pack=(\w+)$/)[1];
+                document.querySelector(`#pack_${pack}`).classList.add('selected');
+            } catch (err) {
+                // Ingen pakke valgt
+                console.log(err);
+            }
+        </script>
     </body>
 </html>

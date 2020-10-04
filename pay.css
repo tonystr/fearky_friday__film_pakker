@@ -1,0 +1,5 @@
+
+.pack:not(.selected) {
+    display: none;
+    visibility: hidden;
+}

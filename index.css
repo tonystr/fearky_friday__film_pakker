@@ -37,11 +37,16 @@ header .brand {
     align-items: center;
     font-size: 1.6rem;
     font-weight: 400;
+    color: #ffffff;
 }
 
 header .brand span {
     padding-top: 18px;
     margin-left: 12px;
+}
+
+main {
+    margin-top: calc(3rem + 34px);
 }
 
 a {
