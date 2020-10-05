@@ -1,5 +1,68 @@
 
+.hidden {
+    display: none;
+    visibility: none;
+}
+
+.error {
+    max-width: 53.3rem;
+    margin: 0 auto;
+}
+
+.error img {
+    max-width: 53.3rem;
+}
+
 .pack:not(.selected) {
     display: none;
     visibility: hidden;
+}
+
+.payment form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+
+.payment .cvc input {
+    width: 3rem;
+    text-align: center;
+}
+
+.payment .expiry input {
+    width: 5rem;
+    text-align: center;
+}
+
+.payment input {
+    font-size: 1rem;
+    border: none;
+    background-color: #323140;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.payment button {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    color: #ffffff;
+    background-color: #356f64;
+    padding: .3rem .6rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.payment .credit-card-number {
+    margin-top: 1rem;
+}
+
+.payment .credit-card-bottom {
+    display: flex;
+}
+
+.payment .credit-card-bottom > * {
+    margin: 0 .6rem;
 }

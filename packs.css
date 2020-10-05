@@ -110,7 +110,6 @@
 
 .pack .movies img {
     height: 300px;
-    margin: 8px;
     border-radius: 3px;
     box-shadow: 0 1px 13px rgba(0, 0, 32, .5);
     transition: .14s box-shadow;
@@ -125,6 +124,67 @@
     margin-left: 12px;
     color: #ffffff;
     transition: .14s background-color;
+}
+
+.pack .movies > div {
+    position: relative;
+    margin: 8px;
+}
+
+.pack .movies > div:hover .title,
+.pack .movies > div:hover .description {
+    opacity: 1;
+}
+
+.pack .movies .title {
+    position: absolute;
+    top: 1rem;
+    padding: .6rem 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 12, .5);
+    opacity: 0;
+    background-color: rgba(0, 0, 12, .66);
+    color: #ffffff;
+    transition: .14s opacity;
+}
+
+.pack .movies .description {
+    position: absolute;
+    bottom: .42rem;
+    padding: .6rem 0;
+    left: 0;
+    right: 0;
+    padding: .4rem .4rem;
+    font-size: .8rem;
+    box-shadow: 0 1px 8px rgba(0, 0, 12, .6);
+    opacity: 0;
+    background-color: rgba(0, 0, 12, .8);
+    color: #ffffff;
+    transition: .14s opacity;
+    border-bottom-left-radius:  2px;
+    border-bottom-right-radius: 2px;
+}
+
+.pack .movies .info {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: .2rem;
+}
+
+.pack .movies .info > div {
+    display: inline;
+}
+
+.pack .movies .runtime {
+    color: #8d96c6;
+}
+
+.pack .movies .stars {
+    color: #fce671;
 }
 
 #pack_action .movies {

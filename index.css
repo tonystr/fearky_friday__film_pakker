@@ -46,7 +46,13 @@ header .brand span {
 }
 
 main {
-    margin-top: calc(3rem + 34px);
+    padding-top: calc(3rem + 34px);
+}
+
+main > h1 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-top: 3rem;
 }
 
 a {

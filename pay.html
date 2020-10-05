@@ -12,8 +12,8 @@
         <header>
             <a href="/">
                 <div class="brand">
-                        <img src="images/film.png" alt="" width="50">
-                        <span>Film Dealeren<span>
+                    <img src="images/film.png" alt="" width="50">
+                    <span>Film Dealeren<span>
                 </div>
             </a>
             <nav>
@@ -23,8 +23,37 @@
             </nav>
         </header>
         <main>
-            BETAL HER
-            <div display="none" class="pack" id="pack_action">
+            <h1><span class="pack-name"></span> - Betal</h1>
+            <div class="error" style="text-align: center"></div>
+            <section class="payment">
+                <form action="pay.html" method="GET">
+                    <div>
+                        <label>First name</label>
+                        <input type="text" name="firstName"></input>
+                    </div>
+                    <div>
+                        <label>Last name</label>
+                        <input type="text" name="lastName"></input>
+                    </div>
+                    <div class="credit-card-number">
+                        <label>Credit card number</label>
+                        <input type="text" name="creditCard"></input>
+                    </div>
+                    <div class="credit-card-bottom">
+                        <div class="cvc">
+                            <label>CVC code</label>
+                            <input type="text" name="cvc" placeholder="123"></input>
+                        </div>
+                        <div class="expiry">
+                            <label>Expiry date</label>
+                            <input type="text" name="expiry" placeholder="dd/mm/yy"></input>
+                        </div>
+                    </div>
+                    <input class="hidden" name="paid" value="true"></input>
+                    <button>Submit</button>
+                </form>
+            </section>
+            <div class="pack" id="pack_action">
                 <a href="/pay.html?pack=action">
                     <div class="head">
                         <h1>Action klassikere <span class="sale">-40%</span></h1>
@@ -100,12 +129,30 @@
             </div>
         </footer>
         <script>
-            try {
-                const pack = window.location.href.match(/pack=(\w+)$/)[1];
-                document.querySelector(`#pack_${pack}`).classList.add('selected');
-            } catch (err) {
-                // Ingen pakke valgt
-                console.log(err);
+            if (/paid=true/.test(window.location.href)) {
+                // Har betalt
+                document.querySelector('main > h1').innerText = 'Takk før kjøpet';
+                document.querySelector('.payment').classList.add('hidden');
+                document.querySelector('main > .error').innerHTML = `
+                    <img src="images/stonks.jpg" alt="Stonks">
+                    <a href="/">Gå tilbake til forsiden</a>
+                `;
+            } else {
+                try {
+                    // Velg pakke
+                    const pack = window.location.href.match(/pack=(\w+)/)[1];
+                    const packElm = document.querySelector(`#pack_${pack}`);
+                    const packName = packElm.querySelector('.head h1').innerText.slice(0, -packElm.querySelector('.head h1 .sale').innerText.length);
+                    packElm.classList.add('selected');
+                    document.querySelectorAll('.pack-name').forEach(p => p.innerText = packName);
+                } catch (err) {
+                    console.error(err);
+                    // Ingen pakke valgt (mest sansynlig :) )
+                    document.querySelector('main > h1').innerText = 'Ingen pakke valgt';
+                    document.querySelector('main > h1').innerText = 'Ingen pakke valgt';
+                    document.querySelector('.payment').classList.add('hidden');
+                    document.querySelector('main > .error').innerHTML = `<a href="/">Gå tilbake til forsiden</a>`;
+                }
             }
         </script>
     </body>
