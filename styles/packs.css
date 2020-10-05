@@ -188,7 +188,7 @@
 }
 
 #pack_action .movies {
-    background-image: url('images/theme_backgrounds/action.jpg');
+    background-image: url('../images/theme_backgrounds/action.jpg');
     background-size: cover;
     background-position: center;
     border-color: #bf3a3a;
@@ -198,7 +198,7 @@
 }
 
 #pack_masterpieces .movies {
-    background-image: url('images/theme_backgrounds/masterpiece.jpg');
+    background-image: url('../images/theme_backgrounds/masterpiece.jpg');
     background-position: center;
     background-size: cover;
     border-color: #3f3fdf;
@@ -208,7 +208,7 @@
 }
 
 #pack_anime .movies {
-    background-image: url('images/theme_backgrounds/anime.jpg');
+    background-image: url('../images/theme_backgrounds/anime.jpg');
     background-size: cover;
     background-position: center;
     border-color: #8be3be;
