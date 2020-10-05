@@ -3,30 +3,30 @@
     <head>
         <meta charset="utf-8">
         <title>Film utlån BETAL</title>
-        <link href="./index.css" rel="stylesheet">
-        <link href="./packs.css" rel="stylesheet">
-        <link href="./pay.css" rel="stylesheet">
+        <link href="styles/index.css" rel="stylesheet">
+        <link href="styles/packs.css" rel="stylesheet">
+        <link href="styles/pay.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
-            <a href="/">
+            <a href="./">
                 <div class="brand">
                     <img src="images/film.png" alt="" width="50">
                     <span>Film Dealeren<span>
                 </div>
             </a>
             <nav>
-                <a href="/pay.html?pack=action">Action</a>
-                <a href="/pay.html?pack=masterpieces">Mesterverk</a>
-                <a href="/pay.html?pack=anime">Anime</a>
+                <a href="./pay.html?pack=action">Action</a>
+                <a href="./pay.html?pack=masterpieces">Mesterverk</a>
+                <a href="./pay.html?pack=anime">Anime</a>
             </nav>
         </header>
         <main>
             <h1><span class="pack-name"></span> - Betal</h1>
             <div class="error" style="text-align: center"></div>
             <section class="payment">
-                <form action="pay.html" method="GET">
+                <form action="./pay.html" method="GET">
                     <div>
                         <label>First name</label>
                         <input type="text" name="firstName"></input>
@@ -54,7 +54,7 @@
                 </form>
             </section>
             <div class="pack" id="pack_action">
-                <a href="/pay.html?pack=action">
+                <a href="./pay.html?pack=action">
                     <div class="head">
                         <h1>Action klassikere <span class="sale">-40%</span></h1>
                         <div class="price">
@@ -72,7 +72,7 @@
                 </a>
             </div>
             <div class="pack" id="pack_masterpieces">
-                <a href="/pay.html?pack=masterpieces">
+                <a href="./pay.html?pack=masterpieces">
                     <div class="head">
                         <h1>Mesterverk <span class="sale">-33%</span></h1>
                         <div class="price">
@@ -90,7 +90,7 @@
                 </a>
             </div>
             <div class="pack" id="pack_anime">
-                <a href="/pay.html?pack=anime">
+                <a href="./pay.html?pack=anime">
                     <div class="head">
                         <h1>Kinesiske Tegneserier <span class="sale">-69%</span></h1>
                         <div class="price">
@@ -151,7 +151,7 @@
                     document.querySelector('main > h1').innerText = 'Ingen pakke valgt';
                     document.querySelector('main > h1').innerText = 'Ingen pakke valgt';
                     document.querySelector('.payment').classList.add('hidden');
-                    document.querySelector('main > .error').innerHTML = `<a href="/">Gå tilbake til forsiden</a>`;
+                    document.querySelector('main > .error').innerHTML = `<a href="./">Gå tilbake til forsiden</a>`;
                 }
             }
         </script>
